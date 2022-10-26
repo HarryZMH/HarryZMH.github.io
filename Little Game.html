@@ -1,0 +1,65 @@
+<html>
+
+<head>
+        <title>Dessert in the Desert Game</title>
+        <style>
+                body {
+                        background-color: SandyBrown
+                }
+
+                button {
+                        color: BlanchedAlmond;
+                        background-color: Chocolate;
+                        border-color: Chocolate;
+                        width: 80px;
+                        height: 32px;
+                        font-size: 16px;
+                        border-radius: 8px;
+                        position: absolute;
+                }
+
+                button:hover {
+                        color: Chocolate;
+                        background-color: BlanchedAlmond;
+                }
+        </style>
+        <script>
+
+
+                function randomizeButtonPositions() {
+                        let buttons = document.querySelectorAll("button");
+                        buttons.forEach((b) => {
+                                b.style.left = (Math.random() * 80 + 10) + "%";
+                                b.style.top = (Math.random() * 80 + 10) + "%";
+                        });
+                }
+
+                let score = 0;
+                function handleDessertClick() {
+                        score++;
+                        document.getElementById("score").innerHTML = score;
+                        this.randomizeButtonPositions();
+                }
+
+                function handleDesertClick() {
+                        score--;
+                        document.getElementById("score").innerHTML = score;
+                        this.randomizeButtonPositions();
+                }
+        </script>
+</head>
+
+<body onload="randomizeButtonPositions()">
+        <p>Score: <span id="score">0</span></p>
+        <button onclick="handleDessertClick();">Dessert</button>
+        <button onclick="handleDesertClick();">Desert</button>
+        <button onclick="handleDesertClick();">Desert</button>
+        <button onclick="handleDesertClick();">Desert</button>
+        <button onclick="handleDesertClick();">Desert</button>
+        <button onclick="handleDesertClick();">Desert</button>
+        <button onclick="handleDesertClick();">Desert</button>
+        <button onclick="handleDesertClick();">Desert</button>
+
+</body>
+
+</html>
